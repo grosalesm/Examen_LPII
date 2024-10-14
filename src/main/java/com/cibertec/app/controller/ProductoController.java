@@ -48,4 +48,22 @@ public class ProductoController {
 		model.addAttribute("categoriaList", catService.getAllCategoria());
 		return "producto/edit";
 	}	
+	
+	@PostMapping("/producto/{id}")
+	public String updateProducto(@PathVariable Integer id, @ModelAttribute("producto") Producto producto, Model model) {
+		Producto existentProducto = prodService.findProductoById(id);
+		existentProducto.setIdProd(id);
+		existentProducto.setDescripcion(producto.getDescripcion());
+		existentProducto.setPrecio(producto.getPrecio());
+		existentProducto.setStock(producto.getStock());
+		existentProducto.setCategoria(producto.getCategoria());
+		prodService.updateProducto(existentProducto);
+		return "redirect:/producto";
+	}
+	
+	@GetMapping("/producto/{id}")
+	public String deleteProducto(@PathVariable Integer id) {
+		prodService.deleteProductoById(id);
+		return "redirect:/producto";
+	}
 }
