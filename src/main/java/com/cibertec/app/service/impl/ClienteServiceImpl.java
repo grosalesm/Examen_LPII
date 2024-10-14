@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cibertec.app.entity.Cliente;
-import com.cibertec.app.repository.CategoriaRepository;
 import com.cibertec.app.repository.ClienteRepository;
 import com.cibertec.app.service.ClienteService;
 

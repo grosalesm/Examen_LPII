@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cibertec.app.entity.Cliente;
 import com.cibertec.app.service.ClienteService;
-import org.springframework.web.bind.annotation.RequestBody;
-
 
 @Controller
 public class ClienteController {
